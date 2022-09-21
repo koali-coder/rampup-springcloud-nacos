@@ -1,0 +1,31 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: rampup-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#    gateway:
+#      routes[0]:
+#        id: nacos-admin-route
+#        uri: lb://rampup-admin
+#        predicates[0]:
+#          name: Path
+#          args[pattern]: /admin/**
+#        filters[0]: StripPrefix=1
+#      routes[1]:
+#        id: nacos-client-route
+#        uri: lb://rampup-client
+#        predicates[0]:
+#          name: Path
+#          args[pattern]: /client/**
+#        filters[0]: StripPrefix=1
+  config:
+    import:
+#      - optional:nacos:application.yml
+      - optional:nacos:${spring.application.name}.yml
