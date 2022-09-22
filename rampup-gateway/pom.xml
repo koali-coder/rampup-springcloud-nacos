@@ -46,5 +46,6 @@
             <artifactId>hutool-system</artifactId>
             <version>${hutool.version}</version>
         </dependency>
+
     </dependencies>
 </project>

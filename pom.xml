@@ -14,6 +14,7 @@
         <module>rampup-gateway</module>
         <module>rampup-admin</module>
         <module>rampup-client</module>
+        <module>rampup-auth</module>
     </modules>
 
     <properties>
